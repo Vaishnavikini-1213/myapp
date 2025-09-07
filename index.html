@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lost & Found Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎒 Campus Lost & Found 🔑</h1>
+  <p>Report lost or found items easily, search & filter them!</p>
+</header>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="🔍 Search items..." onkeyup="searchItems()">
+
+  <select id="filterSelect" onchange="filterItems()">
+    <option value="all">Show All</option>
+    <option value="lost">Lost Only</option>
+    <option value="found">Found Only</option>
+  </select>
+</div>
+
+<div class="container">
+  <!-- Lost Item Form -->
+  <div class="card">
+    <h2>Report Lost Item</h2>
+    <input type="text" id="lostName" placeholder="Item Name">
+    <textarea id="lostDesc" placeholder="Description"></textarea>
+    <input type="text" id="lostContact" placeholder="Your Contact Info">
+    <button onclick="reportLost()">Submit</button>
+    <div class="list" id="lostList"></div>
+  </div>
+
+  <!-- Found Item Form -->
+  <div class="card">
+    <h2>Report Found Item</h2>
+    <input type="text" id="foundName" placeholder="Item Name">
+    <textarea id="foundDesc" placeholder="Description"></textarea>
+    <input type="text" id="foundContact" placeholder="Your Contact Info">
+    <button onclick="reportFound()">Submit</button>
+    <div class="list" id="foundList"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<!-- Floating Action Button -->
+<button class="fab" onclick="scrollToForms()">➕ Report Item</button>
+</body>
+</html>
